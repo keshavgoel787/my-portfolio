@@ -17,18 +17,24 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const toggle = () => setOpen(v => !v);
 
-  const location = useLocation(); // to highlight current page
-
-  const links = [
-    { label: "Home", to: "/" },
-    { label: "About", to: "/about" },
-    { label: "Experience", to: "/experience" },
-    { label: "Projects", to: "/projects" },
-    { label: "Contact", to: "/contact" },
-  ];
+  const location = useLocation();
 
   const cyan = "#66eaff";
-  const bg   = "#212121";
+  const bg = "#212121";
+
+  // External links
+  const externalLinks = {
+    experience: "https://www.linkedin.com/in/keshavgoel",
+    projects: "https://github.com/keshavgoel",
+  };
+
+  const links = [
+    { label: "Home", to: "/", external: false },
+    { label: "About", to: "/about", external: false },
+    { label: "Linkedin", to: externalLinks.experience, external: true },
+    { label: "Github", to: externalLinks.projects, external: true },
+    { label: "Resume", to: "/resume", external: false },
+  ];
 
   return (
     <>
@@ -43,26 +49,28 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
 
-      {/* Drawer styling */}
       <Drawer
         anchor="left"
         open={open}
         onClose={toggle}
-        PaperProps={{ sx: { bgcolor: bg, color: cyan } }}   /* <-- colors */
+        PaperProps={{ sx: { bgcolor: bg, color: cyan } }}
       >
         <Box role="presentation" sx={{ width: 240 }} onClick={toggle}>
           <List disablePadding>
-            {links.map(({ label, to }) => (
+            {links.map(({ label, to, external }) => (
               <ListItemButton
-                key={to}
-                component={RouterLink}
-                to={to}
-                selected={location.pathname === to}
+                key={label}
+                component={external ? "a" : RouterLink}
+                to={external ? undefined : to}
+                href={external ? to : undefined}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                selected={!external && location.pathname === to}
                 sx={{
                   mx: 1,
                   borderRadius: 1,
                   "&.Mui-selected": {
-                    bgcolor: "#333",          // highlight current page
+                    bgcolor: "#333",
                   },
                   "&:hover": {
                     bgcolor: "#2a2a2a",
