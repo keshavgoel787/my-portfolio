@@ -24,8 +24,8 @@ export default function Navbar() {
 
   // External links
   const externalLinks = {
-    experience: "https://www.linkedin.com/in/keshavgoel",
-    projects: "https://github.com/keshavgoel",
+    experience: "https://www.linkedin.com/in/goel-keshav/",
+    projects: "https://github.com/keshavgoel787",
   };
 
   const links = [
