@@ -48,23 +48,16 @@ export default function AboutPage() {
           </Typography>
 
           <Typography paragraph>
-            I’m Keshav Goel, a data-science and math undergrad who loves turning
-            messy datasets into clear stories. Whether I’m hacking away at a
-            hackathon, teaching Python to freshmen, or researching how air-
-            quality data can guide eco-friendly routes, I’m happiest when code
-            meets impact.
+            Hello There 👋
           </Typography>
 
           <Typography paragraph>
-            Off the keyboard you’ll catch me dancing Bhangra, hiking new
-            trails, or hunting for the perfect Dr Pepper refill. My long-term
-            goal: use machine learning to close healthcare gaps—one model, one
-            community at a time.
+            I’m Keshav, a Data Science and Math Major at Northeastern. I’m passionate about applying data and machine learning to bridge gaps and make global impacts. I aim to apply my skills at the intersection of Data and various fields such as Health Care, Business, Entertainment, and Biology, with a focus on Computer Visions, NLP, and much more! When I’m not busy coding, you can find me at Bhangra practice, out hiking, or simply in my room listening to latest big music album. If you share these interests or have any questions, feel free to just say hi or reach out for a chat (I love to yap)! 
+
           </Typography>
 
           <Typography paragraph>
-            Feel free to explore my projects, shoot me a message, or just say
-            hi. I’m always up for a good data chat!
+            Skills: Python, R, MySQL, Java, C#, C, C++,  HTML/CSS/JS, MongoDB, React, Node.js, Flutter, R, JavaScript, TypeScript, Scikit-learn, Tensorflow, Shelf, BeautifulSoup, Selenium, Pandas, Tableau, MS Suite, Pandas, Git, Postman, NLP, Linux, Snowflake, Ultralytics, OpenCV, HuggingFace, Ollama, Gemini, Digital Ocean, AWS.
           </Typography>
         </Box>
       </Box>
