@@ -29,7 +29,7 @@ export default function Navbar() {
   };
 
   const links = [
-    { label: "Home", to: "/", external: false },
+    { label: "Home", to: "/home", external: false },
     { label: "About", to: "/about", external: false },
     { label: "Linkedin", to: externalLinks.experience, external: true },
     { label: "Github", to: externalLinks.projects, external: true },
