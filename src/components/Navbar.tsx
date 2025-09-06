@@ -24,6 +24,7 @@ export default function Navbar() {
   const links = [
     { label: "Home", to: "/" },
     { label: "About", to: "/about" },
+    { label: "Resume", to: "/Resume"}
   ];
 
   const cyan = "#66eaff";
