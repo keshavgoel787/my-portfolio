@@ -7,9 +7,8 @@ import ThreeScene from "../components/ThreeScene";
 const NAV_HEIGHT = 64;
 
 export default function AboutPage() {
-  /* ⚠️  Make sure scrolling is ON for this route */
   useEffect(() => {
-    document.body.classList.remove("no-scroll"); // the class we added on Home
+    document.body.classList.remove("no-scroll");
   }, []);
 
   return (
