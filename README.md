@@ -1,3 +1,4 @@
 My personal portfolio website made with JS + Typescript + Vite
 
-Check it out at: [keshavgoel.xyz](https://www.keshavgoel.xyz/)
+Check it out at: [keshavgoel.xyz](https://www.keshavgoel.xyz/) or [keshavgoel.dev](https://keshavgoel.dev/)
+
