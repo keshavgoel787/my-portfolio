@@ -66,11 +66,13 @@ const bgColor = "#121212";
 const neon = "#66eaff";
 
 export default function Experiences() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
 
-  const toggle = (idx) => {
-    setExpandedIndex(expandedIndex === idx ? null : idx);
-  };
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+const toggle = (idx: number) => {
+  setExpandedIndex(expandedIndex === idx ? null : idx);
+};
+
 
   return (
     <Box sx={{ bgcolor: bgColor, color: neon, py: 8, px: { xs: 2, md: 6 } }}>
