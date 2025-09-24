@@ -34,23 +34,31 @@ export default function Navbar() {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ bgcolor: bg, color: cyan, boxShadow: "none" }}>
+      <AppBar position="fixed" sx={{
+  bgcolor: "rgba(33, 33, 33, 0.8)",
+  backdropFilter: "blur(6px)",
+  color: cyan,
+  boxShadow: "0 0 10px #66eaff33",
+  borderBottom: "1px solid #66eaff33",
+}}>
+
         <Toolbar sx={{ justifyContent: "space-between" }}>
           {/* Left side: menu and name */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <IconButton edge="start" onClick={toggle} sx={{ color: "inherit" }}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" sx={{ ml: 1 }}>
-              Keshav Goel
-            </Typography>
+            <Typography variant="h6" sx={{ ml: 1, fontFamily: 'Orbitron, sans-serif' }}>
+  Keshav Goel
+</Typography>
+
           </Box>
 
           {/* Right side: social icons */}
           <Box>
             <IconButton
               component="a"
-              href="https://github.com/your-github-username"
+              href="https://github.com/keshavgoel787"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ color: "inherit" }}
@@ -59,7 +67,7 @@ export default function Navbar() {
             </IconButton>
             <IconButton
               component="a"
-              href="https://linkedin.com/in/your-linkedin-id"
+              href="https://linkedin.com/in/goel-keshav/"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ color: "inherit" }}
@@ -95,10 +103,30 @@ export default function Navbar() {
                   },
                 }}
               >
-                <ListItemText
-                  primary={label}
-                  primaryTypographyProps={{ sx: { fontWeight: 500 } }}
-                />
+<ListItemText
+  primary={label}
+  primaryTypographyProps={{
+    sx: {
+      fontFamily: 'Orbitron, sans-serif',
+      position: 'relative',
+      display: 'inline-block',
+      '&::after': {
+        content: '""',
+        position: 'absolute',
+        bottom: 2,
+        left: 0,
+        width: 0,
+        height: 2,
+        bgcolor: '#66eaff',
+        transition: 'width 0.3s ease-in-out',
+      },
+      '&:hover::after': {
+        width: '100%',
+      }
+    }
+  }}
+/>
+
               </ListItemButton>
             ))}
           </List>
