@@ -1,7 +1,3 @@
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import WorkIcon from "@mui/icons-material/Work";
