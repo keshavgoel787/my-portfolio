@@ -26,7 +26,6 @@ export default function Navbar() {
     { label: "About", to: "/about" },
     { label: "Experiences", to: "/experience"},
     { label: "Projects", to: "/projects"},
-    { label: "Resume", to: "/Resume"}
   ];
 
   const cyan = "#66eaff";
