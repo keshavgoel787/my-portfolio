@@ -1,33 +1,14 @@
-// HomePage.tsx (inside your hero section)
-import IntroTyper from "../components/IntroTyper";
+import { Box } from "@mui/material";
+import Projects from "../components/Projects";
 import ThreeScene from "../components/ThreeScene";
 
-// HomePage.tsx  (or wherever you place ThreeScene + IntroTyper)
-export default function HomePage() {
+export default function ProjectsPage() {
   return (
-    <section
-      style={{
-        position: "relative",
-        minHeight: "100vh",          // full viewport
-        overflow: "hidden",
-      }}
-    >
+    <>
       <ThreeScene />
-
-      {/* text overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          pointerEvents: "none",
-        }}
-      >
-        <IntroTyper />
-      </div>
-    </section>
+      <Box sx={{ position: "relative", zIndex: 1 }}>
+        <Projects />
+      </Box>
+    </>
   );
 }
