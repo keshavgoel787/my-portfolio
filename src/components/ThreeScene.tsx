@@ -87,7 +87,7 @@ export default function ThreeScene() {
   return (
     <Canvas
       /* fill the whole screen, even behind the app-bar */
-      style={{ position: "fixed", inset: 0, zIndex: -1 }}   // 👈 key lines
+      style={{ position: "fixed", inset: 0, zIndex: -1, pointerEvents: "none" }}   // 👈 key lines
       camera={{ position: [0, 0, 8], fov: 60 }}
       gl={{ antialias: true }}
     >
