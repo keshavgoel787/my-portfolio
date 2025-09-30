@@ -18,10 +18,9 @@ export default function Experiences() {
   return (
     <>
       <style>{`
-        .experience-card:hover {
+        .vertical-timeline-element-content:hover {
           box-shadow: 0 0 30px ${colors.cyan}66 !important;
           border: 1px solid ${colors.cyan}88 !important;
-          transform: scale(1.02) !important;
         }
       `}</style>
       <Box sx={{ color: colors.neon, py: 8, px: { xs: 2, md: 6 }, minHeight: "100vh" }}>
@@ -60,7 +59,6 @@ export default function Experiences() {
                 cursor: "pointer",
                 transition: "all 0.3s ease",
               }}
-              className="experience-card"
               contentArrowStyle={{ borderRight: `7px solid ${colors.neon}` }}
               onTimelineElementClick={() => toggle(idx)}
             >
