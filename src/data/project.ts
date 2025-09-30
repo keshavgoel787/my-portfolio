@@ -3,24 +3,31 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
-    title: "BreatheEasy",
-    description:
-      "Mapped eco-friendly routes using Flutter, Docker, and Google Maps API. Won 1st at CSBase Climate Hackathon.",
-    tech: ["Flutter", "Dart", "Google Maps API", "Docker"],
-    link: "https://github.com/keshavgoel/BreatheEasy",
-  },
-  {
     title: "NUPathfinder",
     description:
-      "Skill-matching platform using MySQL, Flask, and Streamlit to help students prepare for co-ops.",
-    tech: ["Python", "MySQL", "Streamlit", "Flask"],
+      "Deployed full-stack platform matching student skills to co-op requirements, supporting 50 students/advisors. Allowed for accurate matches through MySQL querying, relational DB design, iterative A/B testing, and APIs.",
+    tech: ["Streamlit", "Flask", "MySQL", "Docker", "REST APIs"],
     link: "https://github.com/keshavgoel/NUPathfinder",
   },
   {
-    title: "TextMate",
+    title: "BreatheEasy",
     description:
-      "NLP-powered news summarizer that classifies sports articles and predicts game sentiment.",
-    tech: ["Python", "OpenAI API", "NLTK", "Flask"],
+      "Won 1st place out of 400+ teams for an eco-friendly route planning app using Google Maps + AQI data APIs. Scaled backend services to handle 10K+ API requests/day with Shelf and Docker.",
+    tech: ["Flutter", "Dart", "Google Maps API", "Shelf", "Docker"],
+    link: "https://github.com/keshavgoel/BreatheEasy",
+  },
+  {
+    title: "Textmate",
+    description:
+      "Created a modular NLP pipeline analyzing 1,000+ sports articles for global sentiment trends across games. Automated sentiment extraction with web scraping, NLTK lemmatization, and Plotly visualizations.",
+    tech: ["Python", "NLTK", "OpenAI", "Pandas", "Plotly"],
     link: "https://github.com/keshavgoel/TextMate",
+  },
+  {
+    title: "Bububble",
+    description:
+      "Developed a bubble-based UI enabling users to visualize and dynamically update skills through 'popping'. Delivered personalized recommendations using OpenAI with Edge Functions and User Knowledge Graphs.",
+    tech: ["Next.js", "TailwindCSS", "Supabase", "OpenAI"],
+    link: "https://github.com/keshavgoel/Bububble",
   },
 ];
