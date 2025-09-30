@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import Navbar from "./components/Navbar";
+import ShootingStar from "./components/ShootingStar";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ExperiencePage from "./pages/ExperiencePage";
@@ -10,6 +11,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 export default function App() {
   return (
     <>
+      <ShootingStar />
       <Navbar />
       <Box component="main" sx={{ pt: 8 }}>
         <Routes>

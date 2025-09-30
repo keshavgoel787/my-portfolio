@@ -52,7 +52,14 @@ export default function Navbar() {
               href={LINKS.GITHUB}
               target="_blank"
               rel="noopener noreferrer"
-              sx={{ color: "inherit" }}
+              sx={{
+                color: "inherit",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  transform: "scale(1.2)",
+                  filter: `drop-shadow(0 0 8px ${colors.cyan})`,
+                },
+              }}
             >
               <GitHubIcon />
             </IconButton>
@@ -61,7 +68,14 @@ export default function Navbar() {
               href={LINKS.LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              sx={{ color: "inherit" }}
+              sx={{
+                color: "inherit",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  transform: "scale(1.2)",
+                  filter: `drop-shadow(0 0 8px ${colors.cyan})`,
+                },
+              }}
             >
               <LinkedInIcon />
             </IconButton>

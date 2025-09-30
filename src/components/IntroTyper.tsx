@@ -81,6 +81,10 @@ export default function IntroTyper({
           margin: 0,
           fontSize: "clamp(3rem, 6vw, 6rem)",
           fontWeight: 500,
+          background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
         }}
       >
         {headTxt}

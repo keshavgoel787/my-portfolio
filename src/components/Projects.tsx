@@ -22,6 +22,10 @@ export default function Projects() {
           mb: 6,
           fontFamily: "Orbitron",
           fontWeight: 700,
+          background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
         }}
       >
         🛠️ Mission Builds
@@ -32,11 +36,18 @@ export default function Projects() {
           <Card
             key={idx}
             sx={{
-              bgcolor: colors.background.medium,
+              bgcolor: "rgba(30, 30, 30, 0.4)",
               color: colors.neon,
-              border: `1px solid ${colors.neon}`,
-              boxShadow: `0 0 10px ${colors.cyan}33`,
+              border: `1px solid ${colors.cyan}44`,
+              boxShadow: `0 0 20px ${colors.cyan}22`,
+              backdropFilter: "blur(10px)",
               borderRadius: 3,
+              transition: "all 0.3s ease",
+              "&:hover": {
+                boxShadow: `0 0 30px ${colors.cyan}66`,
+                border: `1px solid ${colors.cyan}88`,
+                transform: "translateY(-4px)",
+              },
             }}
           >
             <CardContent>
@@ -75,6 +86,11 @@ export default function Projects() {
                     color: colors.neon,
                     textTransform: "none",
                     fontWeight: 600,
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      color: colors.cyan,
+                      transform: "scale(1.05)",
+                    },
                   }}
                 >
                   View Project

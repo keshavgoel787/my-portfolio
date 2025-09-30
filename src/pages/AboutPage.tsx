@@ -30,15 +30,31 @@ export default function AboutPage() {
         <Box
           sx={{
             width: LAYOUT.CARD_WIDTH,
-            bgcolor: colors.background.card,
+            bgcolor: "rgba(30, 30, 30, 0.4)",
             color: colors.text.primary,
             borderRadius: 2,
             p: { xs: 3, sm: 4 },
-            boxShadow: 3,
-            backdropFilter: "blur(2px)",
+            boxShadow: `0 0 20px ${colors.cyan}22`,
+            backdropFilter: "blur(10px)",
+            border: `1px solid ${colors.cyan}44`,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              boxShadow: `0 0 30px ${colors.cyan}66`,
+              border: `1px solid ${colors.cyan}88`,
+              transform: "translateY(-4px)",
+            },
           }}
         >
-          <Typography variant="h4" gutterBottom>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
             About Me
           </Typography>
 
@@ -53,15 +69,31 @@ export default function AboutPage() {
         <Box
           sx={{
             width: LAYOUT.CARD_WIDTH,
-            bgcolor: colors.background.card,
+            bgcolor: "rgba(30, 30, 30, 0.4)",
             color: colors.text.primary,
             borderRadius: 2,
             p: { xs: 3, sm: 4 },
-            boxShadow: 3,
-            backdropFilter: "blur(2px)",
+            boxShadow: `0 0 20px ${colors.cyan}22`,
+            backdropFilter: "blur(10px)",
+            border: `1px solid ${colors.cyan}44`,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              boxShadow: `0 0 30px ${colors.cyan}66`,
+              border: `1px solid ${colors.cyan}88`,
+              transform: "translateY(-4px)",
+            },
           }}
         >
-          <Typography variant="h4" gutterBottom>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
             Skills
           </Typography>
 
@@ -106,15 +138,31 @@ export default function AboutPage() {
         <Box
           sx={{
             width: LAYOUT.CARD_WIDTH,
-            bgcolor: colors.background.card,
+            bgcolor: "rgba(30, 30, 30, 0.4)",
             color: colors.text.primary,
             borderRadius: 2,
             p: { xs: 3, sm: 4 },
-            boxShadow: 3,
-            backdropFilter: "blur(2px)",
+            boxShadow: `0 0 20px ${colors.cyan}22`,
+            backdropFilter: "blur(10px)",
+            border: `1px solid ${colors.cyan}44`,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              boxShadow: `0 0 30px ${colors.cyan}66`,
+              border: `1px solid ${colors.cyan}88`,
+              transform: "translateY(-4px)",
+            },
           }}
         >
-          <Typography variant="h4" gutterBottom>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
             Education
           </Typography>
 
@@ -136,13 +184,20 @@ export default function AboutPage() {
         <Box
           sx={{
             width: LAYOUT.CARD_WIDTH,
-            bgcolor: colors.background.card,
+            bgcolor: "rgba(30, 30, 30, 0.4)",
             color: colors.text.primary,
             borderRadius: 2,
             p: { xs: 3, sm: 4 },
-            boxShadow: 3,
-            backdropFilter: "blur(2px)",
+            boxShadow: `0 0 20px ${colors.cyan}22`,
+            backdropFilter: "blur(10px)",
+            border: `1px solid ${colors.cyan}44`,
             textAlign: "center",
+            transition: "all 0.3s ease",
+            "&:hover": {
+              boxShadow: `0 0 30px ${colors.cyan}66`,
+              border: `1px solid ${colors.cyan}88`,
+              transform: "translateY(-4px)",
+            },
           }}
         >
           <Typography variant="h5" gutterBottom>
@@ -161,9 +216,12 @@ export default function AboutPage() {
               color: colors.cyan,
               borderColor: colors.cyan,
               fontWeight: "bold",
+              transition: "all 0.3s ease",
               "&:hover": {
                 backgroundColor: "#1a1a1a",
                 borderColor: colors.cyan,
+                boxShadow: `0 0 20px ${colors.cyan}66`,
+                transform: "scale(1.05)",
               },
             }}
           >
