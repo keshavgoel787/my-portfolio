@@ -16,6 +16,17 @@ export default function Projects() {
   return (
     <Box sx={{color: colors.neon, py: 8, px: { xs: 2, md: 6 } }}>
       <Typography
+        variant="body1"
+        sx={{
+          textAlign: "center",
+          mb: 1,
+          opacity: 0.8,
+          fontStyle: "italic",
+        }}
+      >
+        Here's some stuff I've built (and actually finished):
+      </Typography>
+      <Typography
         variant="h3"
         sx={{
           textAlign: "center",

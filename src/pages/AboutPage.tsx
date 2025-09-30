@@ -58,10 +58,18 @@ export default function AboutPage() {
             About Me
           </Typography>
 
-          <Typography paragraph>Hello There 👋</Typography>
+          <Typography paragraph>Hey there! 👋</Typography>
 
           <Typography paragraph>
-            I'm Keshav, a Data Science and Math Major at Northeastern. I'm passionate about applying data and machine learning to bridge gaps and make global impacts. I aim to apply my skills at the intersection of Data and various fields such as Health Care, Business, Entertainment, and Biology, with a focus on Computer Visions, NLP, and much more! When I'm not busy coding, you can find me at Bhangra practice, out hiking, or simply in my room listening to latest big music album. If you share these interests or have any questions, feel free to just say hi or reach out for a chat (I love to yap)!
+            I'm Keshav, currently studying Data Science and Math at Northeastern (graduating 2027). Started coding in high school with Python and immediately got hooked on the idea of teaching computers to do cool stuff. Now I spend my days building AI tools, wrangling messy data, and occasionally pretending to understand all the math behind it.
+          </Typography>
+
+          <Typography paragraph>
+            These days, I'm working at Johnson & Johnson building GenAI pipelines and microservices. Before that, I was helping recruiters at VDart with AI-powered resume parsing, and analyzing EPA data for environmental research at Northeastern.
+          </Typography>
+
+          <Typography paragraph>
+            When I'm not staring at code, you'll find me at Bhangra practice (yes, I dance!), hunting for the best tacos in Boston, hiking, or expanding my Pokemon card collection. Always down to chat about tech, data science, or why Taco Bell is underrated. Fair warning: I'm a certified Professional Yapper™.
           </Typography>
         </Box>
 

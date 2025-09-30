@@ -25,6 +25,17 @@ export default function Experiences() {
       `}</style>
       <Box sx={{ color: colors.neon, py: 8, px: { xs: 2, md: 6 }, minHeight: "100vh" }}>
         <Typography
+          variant="body1"
+          sx={{
+            textAlign: "center",
+            mb: 1,
+            opacity: 0.8,
+            fontStyle: "italic",
+          }}
+        >
+          Where I've been lucky enough to work:
+        </Typography>
+        <Typography
           variant="h3"
           sx={{
             textAlign: "center",
