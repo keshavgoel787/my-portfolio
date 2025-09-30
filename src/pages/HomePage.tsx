@@ -1,7 +1,9 @@
-// src/pages/HomePage.tsx  (or wherever your hero lives)
+// src/pages/HomePage.tsx
 import { useEffect } from "react";
 import IntroTyper from "../components/IntroTyper";
 import ThreeScene from "../components/ThreeScene";
+import ErrorBoundary from "../components/ErrorBoundary";
+import { LAYOUT } from "../config/constants";
 
 export default function HomePage() {
   /* lock scroll only while this component is mounted */
@@ -10,18 +12,18 @@ export default function HomePage() {
     return () => document.body.classList.remove("no-scroll");
   }, []);
 
-  const NAV_HEIGHT = 64; // same value you padded earlier
-
   return (
     <section
       style={{
         position: "relative",
-        height: `calc(100vh - ${NAV_HEIGHT}px)`,
-        paddingTop: NAV_HEIGHT,
-        overflow: "hidden", // content can't scroll inside section
+        height: `calc(100vh - ${LAYOUT.NAV_HEIGHT}px)`,
+        paddingTop: LAYOUT.NAV_HEIGHT,
+        overflow: "hidden",
       }}
     >
-      <ThreeScene />
+      <ErrorBoundary>
+        <ThreeScene />
+      </ErrorBoundary>
       <div
         style={{
           position: "absolute",

@@ -1,14 +1,10 @@
-import { Box } from "@mui/material";
 import Projects from "../components/Projects";
-import ThreeScene from "../components/ThreeScene";
+import PageLayout from "../components/PageLayout";
 
 export default function ProjectsPage() {
   return (
-    <>
-      <ThreeScene />
-      <Box sx={{ position: "relative", zIndex: 1 }}>
-        <Projects />
-      </Box>
-    </>
+    <PageLayout>
+      <Projects />
+    </PageLayout>
   );
 }

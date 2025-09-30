@@ -1,13 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-
-const theme = createTheme({
-  palette: { mode: "dark", primary: { main: "#00e0ff" } },
-  typography: { fontFamily: `"Fira Code", monospace` },
-});
+import { theme } from "./config/theme";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

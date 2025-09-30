@@ -14,31 +14,23 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { navLinks } from "../config/navLinks";
+import { colors } from "../config/theme";
+import { LINKS } from "../config/constants";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const toggle = () => setOpen((v) => !v);
-
   const location = useLocation();
-
-  const links = [
-    { label: "Home", to: "/" },
-    { label: "About", to: "/about" },
-    { label: "Experiences", to: "/experience"},
-    { label: "Projects", to: "/projects"},
-  ];
-
-  const cyan = "#66eaff";
-  const bg = "#212121";
 
   return (
     <>
       <AppBar position="fixed" sx={{
-  bgcolor: "rgba(33, 33, 33, 0.8)",
+  bgcolor: colors.background.navTransparent,
   backdropFilter: "blur(6px)",
-  color: cyan,
-  boxShadow: "0 0 10px #66eaff33",
-  borderBottom: "1px solid #66eaff33",
+  color: colors.cyan,
+  boxShadow: `0 0 10px ${colors.cyan}33`,
+  borderBottom: `1px solid ${colors.cyan}33`,
 }}>
 
         <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -57,7 +49,7 @@ export default function Navbar() {
           <Box>
             <IconButton
               component="a"
-              href="https://github.com/keshavgoel787"
+              href={LINKS.GITHUB}
               target="_blank"
               rel="noopener noreferrer"
               sx={{ color: "inherit" }}
@@ -66,7 +58,7 @@ export default function Navbar() {
             </IconButton>
             <IconButton
               component="a"
-              href="https://linkedin.com/in/goel-keshav/"
+              href={LINKS.LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
               sx={{ color: "inherit" }}
@@ -81,11 +73,11 @@ export default function Navbar() {
         anchor="left"
         open={open}
         onClose={toggle}
-        PaperProps={{ sx: { bgcolor: bg, color: cyan } }}
+        PaperProps={{ sx: { bgcolor: colors.background.nav, color: colors.cyan } }}
       >
         <Box role="presentation" sx={{ width: 240 }} onClick={toggle}>
           <List disablePadding>
-            {links.map(({ label, to }) => (
+            {navLinks.map(({ label, to }) => (
               <ListItemButton
                 key={to}
                 component={RouterLink}
@@ -116,7 +108,7 @@ export default function Navbar() {
         left: 0,
         width: 0,
         height: 2,
-        bgcolor: '#66eaff',
+        bgcolor: colors.cyan,
         transition: 'width 0.3s ease-in-out',
       },
       '&:hover::after': {

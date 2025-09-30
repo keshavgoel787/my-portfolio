@@ -8,7 +8,9 @@ function Galaxy() {
 
   /* Build geometry + per-star alpha once */
   const { geometry, material } = useMemo(() => {
-    const starCount = 20_000;
+    // Reduce star count on mobile for better performance
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+    const starCount = isMobile ? 5_000 : 20_000;
     const positions = new Float32Array(starCount * 3);
     const alphas    = new Float32Array(starCount);
 
