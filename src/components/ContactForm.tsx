@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { Box, TextField, Button, Typography, Alert } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import emailjs from "emailjs-com";
