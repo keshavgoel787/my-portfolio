@@ -58,19 +58,90 @@ export default function AboutPage() {
             About Me
           </Typography>
 
-          <Typography paragraph>Hey there! 👋</Typography>
+          <Typography sx={{ mb: 2 }}>Hey there! 👋</Typography>
 
-          <Typography paragraph>
+          <Typography sx={{ mb: 2 }}>
             I'm Keshav, currently studying Data Science and Math at Northeastern (graduating 2027). Started coding in high school with Python and immediately got hooked on the idea of teaching computers to do cool stuff. Now I spend my days building AI tools, wrangling messy data, and occasionally pretending to understand all the math behind it.
           </Typography>
 
-          <Typography paragraph>
+          <Typography sx={{ mb: 2 }}>
             These days, I'm working at Johnson & Johnson building GenAI pipelines and microservices. Before that, I was helping recruiters at VDart with AI-powered resume parsing, and analyzing EPA data for environmental research at Northeastern.
           </Typography>
 
-          <Typography paragraph>
+          <Typography sx={{ mb: 2 }}>
             When I'm not staring at code, you'll find me at Bhangra practice (yes, I dance!), hunting for the best tacos in Boston, hiking, or expanding my Pokemon card collection. Always down to chat about tech, data science, or why Taco Bell is underrated. Fair warning: I'm a certified Professional Yapper™.
           </Typography>
+        </Box>
+
+        {/* Achievements Card */}
+        <Box
+          sx={{
+            width: LAYOUT.CARD_WIDTH,
+            bgcolor: "rgba(30, 30, 30, 0.4)",
+            color: colors.text.primary,
+            borderRadius: 2,
+            p: { xs: 3, sm: 4 },
+            boxShadow: `0 0 20px ${colors.cyan}22`,
+            backdropFilter: "blur(10px)",
+            border: `1px solid ${colors.cyan}44`,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              boxShadow: `0 0 30px ${colors.cyan}66`,
+              border: `1px solid ${colors.cyan}88`,
+              transform: "translateY(-4px)",
+            },
+          }}
+        >
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Achievements
+          </Typography>
+
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <Box>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                🏆 1st Place - HackBeanpot 2024
+              </Typography>
+              <Typography variant="body2">
+                Beat 400+ teams with BreatheEasy, an eco-friendly route planning app
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                🎓 GPA: 3.88/4.00
+              </Typography>
+              <Typography variant="body2">
+                Dean's List recipient - Data Science & Mathematics
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                👨‍🏫 Teaching Assistant
+              </Typography>
+              <Typography variant="body2">
+                Mentored 100+ students in Python & Data Science, improving assignment performance by 20%
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                🚀 Production Impact
+              </Typography>
+              <Typography variant="body2">
+                Built systems handling 2,000+ daily messages and 10K+ API requests in production environments
+              </Typography>
+            </Box>
+          </Box>
         </Box>
 
         {/* Skills Card */}
@@ -139,6 +210,77 @@ export default function AboutPage() {
             <Typography>
               Git, Docker, Linux, Tableau, Snowflake, AWS, Digital Ocean, and the usual suspects
             </Typography>
+          </Box>
+        </Box>
+
+        {/* Currently Learning Card */}
+        <Box
+          sx={{
+            width: LAYOUT.CARD_WIDTH,
+            bgcolor: "rgba(30, 30, 30, 0.4)",
+            color: colors.text.primary,
+            borderRadius: 2,
+            p: { xs: 3, sm: 4 },
+            boxShadow: `0 0 20px ${colors.cyan}22`,
+            backdropFilter: "blur(10px)",
+            border: `1px solid ${colors.cyan}44`,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              boxShadow: `0 0 30px ${colors.cyan}66`,
+              border: `1px solid ${colors.cyan}88`,
+              transform: "translateY(-4px)",
+            },
+          }}
+        >
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Currently Learning
+          </Typography>
+
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            <Box>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                🧠 Advanced RAG Architectures
+              </Typography>
+              <Typography variant="body2">
+                Exploring multi-agent systems and hybrid search techniques for better context retrieval
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                ☁️ Kubernetes & Cloud-Native Development
+              </Typography>
+              <Typography variant="body2">
+                Deepening my understanding of container orchestration and microservices deployment
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                📊 Time Series Forecasting
+              </Typography>
+              <Typography variant="body2">
+                Working with Prophet and ARIMA models for environmental data prediction
+              </Typography>
+            </Box>
+
+            <Box>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                🎨 Three.js & WebGL
+              </Typography>
+              <Typography variant="body2">
+                Building interactive 3D experiences (like the galaxy on this site!)
+              </Typography>
+            </Box>
           </Box>
         </Box>
 
@@ -211,8 +353,11 @@ export default function AboutPage() {
           <Typography variant="h5" gutterBottom>
             ☕ Let's Connect
           </Typography>
-          <Typography paragraph>
+          <Typography sx={{ mb: 2 }}>
             Always down to chat about tech, data science, or the best taco spots. Grab my resume below or just reach out!
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 3, color: colors.cyan, fontWeight: "bold" }}>
+            📧 keshavgoel@northeastern.edu
           </Typography>
           <Button
             variant="outlined"

@@ -24,7 +24,7 @@ export default function Projects() {
           fontStyle: "italic",
         }}
       >
-        Here's some stuff I've built (and actually finished):
+        Here's some stuff I've built:
       </Typography>
       <Typography
         variant="h3"

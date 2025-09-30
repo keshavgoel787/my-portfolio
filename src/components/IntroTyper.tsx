@@ -12,7 +12,7 @@ interface Props {
 
 export default function IntroTyper({
   headline = "Hi, I'm Keshav",
-  words = ["a Data Scientist", "a Software Engineer", "building cool things", "passionate about AI", "a Bhangra Dancer", "definitely NOT a morning person", "a Taco Bell enthusiast", "probably debugging right now", "a Math geek", "obsessed with Pokemon cards", "exploring the world", "binge-watching Marvel", "a Professional Yapper", "always learning something new", "your next teammate"],
+  words = ["a Data Scientist", "a Software Engineer", "building GenAI pipelines", "optimizing RAG systems", "a Bhangra Dancer", "debugging with coffee", "a Taco Bell enthusiast", "wrangling messy data", "deploying on Kubernetes", "training ML models", "obsessed with Pokemon cards", "fine-tuning LLMs", "a Professional Yapper", "shipping production code", "your next teammate"],
   typeSpeed = 90,
   deleteSpeed = 60,
   delayBetweenWords = 1400,
