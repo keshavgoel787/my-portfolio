@@ -8,6 +8,7 @@ import {
   ListItemText,
   Toolbar,
   Typography,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -35,14 +36,62 @@ export default function Navbar() {
 
         <Toolbar sx={{ justifyContent: "space-between" }}>
           {/* Left side: menu and name */}
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <IconButton edge="start" onClick={toggle} sx={{ color: "inherit" }} aria-label="Open navigation menu">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            {/* Mobile hamburger menu */}
+            <IconButton
+              edge="start"
+              onClick={toggle}
+              sx={{
+                color: "inherit",
+                display: { xs: "block", md: "none" }
+              }}
+              aria-label="Open navigation menu"
+            >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" sx={{ ml: 1, fontFamily: 'Orbitron, sans-serif' }}>
-  Keshav Goel
-</Typography>
 
+            <Typography variant="h6" sx={{ fontFamily: 'Orbitron, sans-serif' }}>
+              Keshav Goel
+            </Typography>
+
+            {/* Desktop horizontal navigation */}
+            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1, ml: 2 }}>
+              {navLinks.map(({ label, to }) => (
+                <Button
+                  key={to}
+                  component={RouterLink}
+                  to={to}
+                  sx={{
+                    color: location.pathname === to ? colors.primary : colors.text.primary,
+                    fontFamily: 'Orbitron, sans-serif',
+                    fontSize: "0.9rem",
+                    position: "relative",
+                    textTransform: "none",
+                    px: 2,
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      bottom: 0,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      width: location.pathname === to ? "80%" : "0%",
+                      height: 2,
+                      bgcolor: colors.cyan,
+                      transition: "width 0.3s ease",
+                    },
+                    "&:hover": {
+                      bgcolor: "transparent",
+                      color: colors.cyan,
+                      "&::after": {
+                        width: "80%",
+                      },
+                    },
+                  }}
+                >
+                  {label}
+                </Button>
+              ))}
+            </Box>
           </Box>
 
           {/* Right side: social icons */}
