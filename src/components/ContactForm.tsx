@@ -17,11 +17,9 @@ export default function ContactForm() {
     setStatus("sending");
 
     try {
-      // Replace these with your EmailJS credentials
-      // Get them from https://www.emailjs.com/
-      const SERVICE_ID = "YOUR_SERVICE_ID";
-      const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-      const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+      const SERVICE_ID = "service_bkz8t7t";
+      const TEMPLATE_ID = "template_f7ouzie";
+      const PUBLIC_KEY = "11P66NXnd67CPLfiQ";
 
       await emailjs.send(
         SERVICE_ID,
