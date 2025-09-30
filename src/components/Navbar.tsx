@@ -36,7 +36,7 @@ export default function Navbar() {
         <Toolbar sx={{ justifyContent: "space-between" }}>
           {/* Left side: menu and name */}
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <IconButton edge="start" onClick={toggle} sx={{ color: "inherit" }}>
+            <IconButton edge="start" onClick={toggle} sx={{ color: "inherit" }} aria-label="Open navigation menu">
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" sx={{ ml: 1, fontFamily: 'Orbitron, sans-serif' }}>
@@ -52,6 +52,7 @@ export default function Navbar() {
               href={LINKS.GITHUB}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit my GitHub profile"
               sx={{
                 color: "inherit",
                 transition: "all 0.3s ease",
@@ -68,6 +69,7 @@ export default function Navbar() {
               href={LINKS.LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit my LinkedIn profile"
               sx={{
                 color: "inherit",
                 transition: "all 0.3s ease",

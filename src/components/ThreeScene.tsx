@@ -71,8 +71,14 @@ function Galaxy() {
   /* Animation: gentle autonomous spin + retina-aware point size */
   useFrame(({ gl }, delta) => {
     if (!pointsRef.current) return;
-    pointsRef.current.rotation.y += delta * 0.04; // slow spin
-    pointsRef.current.rotation.x += delta * 0.02; // slight wobble
+
+    // Respect prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      pointsRef.current.rotation.y += delta * 0.04; // slow spin
+      pointsRef.current.rotation.x += delta * 0.02; // slight wobble
+    }
 
     // keep points crisp on HiDPI / zoom
     (pointsRef.current.material as THREE.ShaderMaterial).uniforms.uPR.value =

@@ -18,11 +18,15 @@ export default function IntroTyper({
   delayBetweenWords = 1400,
   cursorGlyph = "|",
 }: Props) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* ── headline typing ─────────────────────────────── */
-  const [headTxt, setHeadTxt]   = useState("");
-  const [headlineDone, setDone] = useState(false);
+  const [headTxt, setHeadTxt]   = useState(prefersReducedMotion ? headline : "");
+  const [headlineDone, setDone] = useState(prefersReducedMotion);
 
   useEffect(() => {
+    if (prefersReducedMotion) return;
+
     let i = 0;
     const id = setInterval(() => {
       setHeadTxt(headline.slice(0, ++i));
@@ -32,15 +36,15 @@ export default function IntroTyper({
       }
     }, typeSpeed);
     return () => clearInterval(id);
-  }, [headline, typeSpeed]);
+  }, [headline, typeSpeed, prefersReducedMotion]);
 
   /* ── rotating sub-heading ────────────────────────── */
   const [wordIdx, setWordIdx]   = useState(0);
-  const [subTxt, setSubTxt]     = useState("");
+  const [subTxt, setSubTxt]     = useState(prefersReducedMotion ? words[0] : "");
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    if (!headlineDone) return;
+    if (!headlineDone || prefersReducedMotion) return;
     const current = words[wordIdx % words.length];
     const speed   = deleting ? deleteSpeed : typeSpeed;
 
@@ -67,6 +71,7 @@ export default function IntroTyper({
     typeSpeed,
     deleteSpeed,
     delayBetweenWords,
+    prefersReducedMotion,
   ]);
 
   /* ── cursor placement: headline while typing, otherwise sub-heading ── */
@@ -88,13 +93,13 @@ export default function IntroTyper({
         }}
       >
         {headTxt}
-        {!headlineDone && renderCursor()}
+        {!headlineDone && !prefersReducedMotion && renderCursor()}
       </h1>
 
       {headlineDone && (
         <h2 style={{ marginTop: "0.6rem", opacity: 0.9 }}>
           {subTxt}
-          {renderCursor()}
+          {!prefersReducedMotion && renderCursor()}
         </h2>
       )}
 
@@ -107,6 +112,11 @@ export default function IntroTyper({
         }
         @keyframes blink {
           50% { opacity: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .caret {
+            animation: none;
+          }
         }
       `}</style>
     </div>

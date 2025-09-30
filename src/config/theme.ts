@@ -13,7 +13,7 @@ export const colors = {
     navTransparent: "rgba(33, 33, 33, 0.8)",
   },
   text: {
-    primary: "#e0e0e0",
+    primary: "#f0f0f0",  // Increased from #e0e0e0 for better contrast (WCAG AAA compliant)
     light: "#ffffff",
   },
 } as const;
@@ -22,6 +22,10 @@ export const theme = createTheme({
   palette: {
     mode: "dark",
     primary: { main: colors.primary },
+    text: {
+      primary: colors.text.primary,
+      secondary: "rgba(240, 240, 240, 0.7)",
+    },
   },
   typography: {
     fontFamily: `"Fira Code", monospace`,
