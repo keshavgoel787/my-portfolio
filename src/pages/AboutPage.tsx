@@ -94,7 +94,7 @@ export default function AboutPage() {
               backgroundClip: "text",
             }}
           >
-            Skills
+            What I Work With
           </Typography>
 
           <Box sx={{ mb: 3 }}>
@@ -102,13 +102,13 @@ export default function AboutPage() {
               Languages
             </Typography>
             <Typography>
-              Python, R, Java, C#, C, C++, JavaScript, TypeScript, HTML/CSS, SQL
+              Python (my go-to), JavaScript, TypeScript, R, Java, C#, C, C++, HTML/CSS, SQL
             </Typography>
           </Box>
 
           <Box sx={{ mb: 3 }}>
             <Typography variant="h6" sx={{ color: colors.cyan, mb: 1 }}>
-              Data Science & ML
+              Data Science & ML (where the magic happens)
             </Typography>
             <Typography>
               Scikit-learn, TensorFlow, Pandas, OpenCV, Ultralytics, HuggingFace, Ollama, Gemini, NLP, BeautifulSoup, Selenium
@@ -120,7 +120,7 @@ export default function AboutPage() {
               Web & Mobile
             </Typography>
             <Typography>
-              React, Node.js, Flutter, MongoDB, MySQL
+              React (like this site!), Node.js, Flutter, MongoDB, MySQL
             </Typography>
           </Box>
 
@@ -129,7 +129,7 @@ export default function AboutPage() {
               Tools & Platforms
             </Typography>
             <Typography>
-              Git, Postman, Docker, Linux, Tableau, Snowflake, AWS, Digital Ocean, MS Suite
+              Git, Docker, Linux, Tableau, Snowflake, AWS, Digital Ocean, and the usual suspects
             </Typography>
           </Box>
         </Box>
@@ -201,10 +201,10 @@ export default function AboutPage() {
           }}
         >
           <Typography variant="h5" gutterBottom>
-            📄 My Resume
+            ☕ Let's Connect
           </Typography>
           <Typography paragraph>
-            Here's a quick look at my latest resume. Feel free to download or reach out for the latest version!
+            Always down to chat about tech, data science, or the best taco spots. Grab my resume below or just reach out!
           </Typography>
           <Button
             variant="outlined"
@@ -225,7 +225,7 @@ export default function AboutPage() {
               },
             }}
           >
-            View Resume
+            Grab My Resume
           </Button>
         </Box>
       </Box>

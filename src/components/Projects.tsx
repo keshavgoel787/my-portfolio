@@ -55,6 +55,20 @@ export default function Projects() {
                 {proj.title}
               </Typography>
 
+              {proj.why && (
+                <Typography
+                  variant="body2"
+                  sx={{
+                    my: 1,
+                    fontStyle: "italic",
+                    opacity: 0.9,
+                    color: colors.cyan
+                  }}
+                >
+                  💡 {proj.why}
+                </Typography>
+              )}
+
               <Typography variant="body1" sx={{ my: 1 }}>
                 {proj.description}
               </Typography>

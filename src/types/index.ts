@@ -11,6 +11,7 @@ export interface Experience {
 export interface Project {
   title: string;
   description: string;
+  why?: string;
   tech: string[];
   link: string;
 }
