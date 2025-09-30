@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import { Box } from "@mui/material";
-import { useEffect } from "react";
+import { Box, CircularProgress } from "@mui/material";
+import { useEffect, lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import ShootingStar from "./components/ShootingStar";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ExperiencePage from "./pages/ExperiencePage";
-import ProjectsPage from "./pages/ProjectsPage";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ExperiencePage = lazy(() => import("./pages/ExperiencePage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
 
 
 export default function App() {
@@ -42,12 +43,27 @@ export default function App() {
       <ShootingStar />
       <Navbar />
       <Box component="main" sx={{ pt: 8 }}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-        </Routes>
+        <Suspense
+          fallback={
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                minHeight: "100vh",
+              }}
+            >
+              <CircularProgress sx={{ color: "#00e0ff" }} />
+            </Box>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+          </Routes>
+        </Suspense>
       </Box>
     </>
   );
