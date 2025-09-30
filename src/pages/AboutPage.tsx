@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import PageLayout from "../components/PageLayout";
+import ContactForm from "../components/ContactForm";
 import { LAYOUT, LINKS } from "../config/constants";
 import { colors } from "../config/theme";
 
@@ -330,7 +331,7 @@ export default function AboutPage() {
           </Typography>
         </Box>
 
-        {/* Resume Card */}
+        {/* Contact Card */}
         <Box
           sx={{
             width: LAYOUT.CARD_WIDTH,
@@ -341,7 +342,6 @@ export default function AboutPage() {
             boxShadow: `0 0 20px ${colors.cyan}22`,
             backdropFilter: "blur(10px)",
             border: `1px solid ${colors.cyan}44`,
-            textAlign: "center",
             transition: "all 0.3s ease",
             "&:hover": {
               boxShadow: `0 0 30px ${colors.cyan}66`,
@@ -350,36 +350,50 @@ export default function AboutPage() {
             },
           }}
         >
-          <Typography variant="h5" gutterBottom>
-            ☕ Let's Connect
-          </Typography>
-          <Typography sx={{ mb: 2 }}>
-            Always down to chat about tech, data science, or the best taco spots. Grab my resume below or just reach out!
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 3, color: colors.cyan, fontWeight: "bold" }}>
-            📧 keshavgoel@northeastern.edu
-          </Typography>
-          <Button
-            variant="outlined"
-            href={LINKS.RESUME_PATH}
-            target="_blank"
-            rel="noopener noreferrer"
-            startIcon={<InsertDriveFileIcon />}
+          <Typography
+            variant="h4"
+            gutterBottom
             sx={{
-              color: colors.cyan,
-              borderColor: colors.cyan,
-              fontWeight: "bold",
-              transition: "all 0.3s ease",
-              "&:hover": {
-                backgroundColor: "#1a1a1a",
-                borderColor: colors.cyan,
-                boxShadow: `0 0 20px ${colors.cyan}66`,
-                transform: "scale(1.05)",
-              },
+              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              mb: 2,
             }}
           >
-            Grab My Resume
-          </Button>
+            ☕ Let's Connect
+          </Typography>
+          <Typography sx={{ mb: 3 }}>
+            Always down to chat about tech, data science, or the best taco spots. Send me a message below or grab my resume!
+          </Typography>
+
+          <ContactForm />
+
+          <Box sx={{ mt: 3, pt: 3, borderTop: `1px solid ${colors.cyan}33` }}>
+            <Button
+              variant="outlined"
+              href={LINKS.RESUME_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<InsertDriveFileIcon />}
+              fullWidth
+              sx={{
+                color: colors.cyan,
+                borderColor: colors.cyan,
+                fontWeight: "bold",
+                py: 1.5,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: `${colors.cyan}22`,
+                  borderColor: colors.cyan,
+                  boxShadow: `0 0 20px ${colors.cyan}66`,
+                  transform: "scale(1.02)",
+                },
+              }}
+            >
+              Download My Resume
+            </Button>
+          </Box>
         </Box>
       </Box>
     </PageLayout>
