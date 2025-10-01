@@ -179,7 +179,7 @@ export default function ContactForm() {
       </Button>
 
       <Typography variant="caption" sx={{ textAlign: "center", color: colors.text.primary, opacity: 0.7 }}>
-        Or email me directly at keshavgoel@northeastern.edu
+        Or email me directly at keshavgoel@gmail.com
       </Typography>
     </Box>
   );
