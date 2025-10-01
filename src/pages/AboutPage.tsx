@@ -109,7 +109,7 @@ export default function AboutPage() {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Box>
               <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                🏆 1st Place - HackBeanpot 2024
+                🏆 1st Place - CSBase Climate Hackathon 2024
               </Typography>
               <Typography variant="body2">
                 Beat 400+ teams with BreatheEasy, an eco-friendly route planning app

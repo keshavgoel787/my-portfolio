@@ -148,7 +148,7 @@ export default function ContactForm() {
 
       {status === "error" && (
         <Alert severity="error">
-          Failed to send message. Please email me directly at keshavgoel@northeastern.edu
+          Failed to send message. Please email me directly at kgoel9657@gmail.com
         </Alert>
       )}
 
