@@ -324,9 +324,6 @@ export default function AboutPage() {
             Bachelor of Science in Data Science and Mathematics
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            GPA: 3.88/4.00
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
             Expected Graduation: May 2027
           </Typography>
         </Box>
