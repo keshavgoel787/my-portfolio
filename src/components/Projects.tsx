@@ -3,10 +3,13 @@ import {
   Box,
   Card,
   CardContent,
+  CardMedia,
   Typography,
   Chip,
   Stack,
   Button,
+  ImageList,
+  ImageListItem,
 } from "@mui/material";
 import LaunchIcon from "@mui/icons-material/Launch";
 import { projects } from "../data/project";
@@ -61,6 +64,32 @@ export default function Projects() {
               },
             }}
           >
+            {/* Thumbnail/Video Section */}
+            {proj.video && (
+              <CardMedia
+                component="video"
+                controls
+                src={proj.video}
+                sx={{
+                  width: "100%",
+                  maxHeight: 400,
+                  objectFit: "cover",
+                }}
+              />
+            )}
+            {!proj.video && proj.thumbnail && (
+              <CardMedia
+                component="img"
+                image={proj.thumbnail}
+                alt={`${proj.title} thumbnail`}
+                sx={{
+                  width: "100%",
+                  maxHeight: 400,
+                  objectFit: "cover",
+                }}
+              />
+            )}
+
             <CardContent>
               <Typography variant="h5" sx={{ fontWeight: 700 }}>
                 {proj.title}
@@ -83,6 +112,31 @@ export default function Projects() {
               <Typography variant="body1" sx={{ my: 1 }}>
                 {proj.description}
               </Typography>
+
+              {/* Additional Images Gallery */}
+              {proj.images && proj.images.length > 0 && (
+                <ImageList
+                  sx={{ width: "100%", my: 2 }}
+                  cols={proj.images.length > 2 ? 3 : proj.images.length}
+                  rowHeight={200}
+                  gap={8}
+                >
+                  {proj.images.map((image, i) => (
+                    <ImageListItem key={i}>
+                      <img
+                        src={image}
+                        alt={`${proj.title} screenshot ${i + 1}`}
+                        loading="lazy"
+                        style={{
+                          objectFit: "cover",
+                          borderRadius: "8px",
+                          border: `1px solid ${colors.cyan}44`,
+                        }}
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              )}
 
               <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap", my: 1 }}>
                 {proj.tech.map((tech, i) => (

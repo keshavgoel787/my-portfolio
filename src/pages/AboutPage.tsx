@@ -109,6 +109,9 @@ export default function AboutPage() {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Box>
               <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
+                🏆 2nd Place - HackRU Hackathon 2025
+              </Typography>
+              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
                 🏆 1st Place - CSBase Climate Hackathon 2024
               </Typography>
               <Typography variant="body2">

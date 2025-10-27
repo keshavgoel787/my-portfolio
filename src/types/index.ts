@@ -14,6 +14,9 @@ export interface Project {
   why?: string;
   tech: string[];
   link: string;
+  video?: string;
+  images?: string[];
+  thumbnail?: string;
 }
 
 export interface NavLink {
