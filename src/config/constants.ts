@@ -16,4 +16,5 @@ export const LINKS = {
   GITHUB: "https://github.com/keshavgoel787",
   LINKEDIN: "https://linkedin.com/in/goel-keshav/",
   RESUME_PATH: "/Keshav_Goel_Resume.pdf",
+  EMAIL: "kgoel9657@gmail.com",
 } as const;

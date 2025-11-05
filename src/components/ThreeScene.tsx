@@ -4,7 +4,7 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
 function Galaxy() {
-  const pointsRef = useRef<THREE.Points>(null!);
+  const pointsRef = useRef<THREE.Points | null>(null);
 
   /* Build geometry + per-star alpha once */
   const { geometry, material } = useMemo(() => {

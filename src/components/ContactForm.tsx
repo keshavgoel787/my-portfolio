@@ -3,6 +3,29 @@ import { Box, TextField, Button, Typography, Alert } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import emailjs from "emailjs-com";
 import { colors } from "../config/theme";
+import { LINKS } from "../config/constants";
+
+// Shared TextField styling
+const textFieldSx = {
+  "& .MuiOutlinedInput-root": {
+    color: colors.text.primary,
+    "& fieldset": {
+      borderColor: `${colors.cyan}44`,
+    },
+    "&:hover fieldset": {
+      borderColor: `${colors.cyan}88`,
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: colors.cyan,
+    },
+  },
+  "& .MuiInputLabel-root": {
+    color: colors.text.primary,
+    "&.Mui-focused": {
+      color: colors.cyan,
+    },
+  },
+};
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -17,11 +40,16 @@ export default function ContactForm() {
     setStatus("sending");
 
     try {
-      const SERVICE_ID = "service_bkz8t7t";
-      const TEMPLATE_ID = "template_f7ouzie";
-      const PUBLIC_KEY = "11P66NXnd67CPLfiQ";
+      const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      await emailjs.send(
+      // Timeout after 10 seconds
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error("Request timeout")), 10000)
+      );
+
+      const emailPromise = emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         {
@@ -31,6 +59,8 @@ export default function ContactForm() {
         },
         PUBLIC_KEY
       );
+
+      await Promise.race([emailPromise, timeoutPromise]);
 
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
@@ -57,26 +87,7 @@ export default function ContactForm() {
         fullWidth
         value={formData.name}
         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        sx={{
-          "& .MuiOutlinedInput-root": {
-            color: colors.text.primary,
-            "& fieldset": {
-              borderColor: `${colors.cyan}44`,
-            },
-            "&:hover fieldset": {
-              borderColor: `${colors.cyan}88`,
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: colors.cyan,
-            },
-          },
-          "& .MuiInputLabel-root": {
-            color: colors.text.primary,
-            "&.Mui-focused": {
-              color: colors.cyan,
-            },
-          },
-        }}
+        sx={textFieldSx}
       />
 
       <TextField
@@ -87,26 +98,7 @@ export default function ContactForm() {
         fullWidth
         value={formData.email}
         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        sx={{
-          "& .MuiOutlinedInput-root": {
-            color: colors.text.primary,
-            "& fieldset": {
-              borderColor: `${colors.cyan}44`,
-            },
-            "&:hover fieldset": {
-              borderColor: `${colors.cyan}88`,
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: colors.cyan,
-            },
-          },
-          "& .MuiInputLabel-root": {
-            color: colors.text.primary,
-            "&.Mui-focused": {
-              color: colors.cyan,
-            },
-          },
-        }}
+        sx={textFieldSx}
       />
 
       <TextField
@@ -118,26 +110,7 @@ export default function ContactForm() {
         rows={5}
         value={formData.message}
         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        sx={{
-          "& .MuiOutlinedInput-root": {
-            color: colors.text.primary,
-            "& fieldset": {
-              borderColor: `${colors.cyan}44`,
-            },
-            "&:hover fieldset": {
-              borderColor: `${colors.cyan}88`,
-            },
-            "&.Mui-focused fieldset": {
-              borderColor: colors.cyan,
-            },
-          },
-          "& .MuiInputLabel-root": {
-            color: colors.text.primary,
-            "&.Mui-focused": {
-              color: colors.cyan,
-            },
-          },
-        }}
+        sx={textFieldSx}
       />
 
       {status === "success" && (
@@ -148,7 +121,7 @@ export default function ContactForm() {
 
       {status === "error" && (
         <Alert severity="error">
-          Failed to send message. Please email me directly at kgoel9657@gmail.com
+          Failed to send message. Please email me directly at {LINKS.EMAIL}
         </Alert>
       )}
 
@@ -179,7 +152,7 @@ export default function ContactForm() {
       </Button>
 
       <Typography variant="caption" sx={{ textAlign: "center", color: colors.text.primary, opacity: 0.7 }}>
-        Or email me directly at kgoel9657@gmail.com
+        Or email me directly at {LINKS.EMAIL}
       </Typography>
     </Box>
   );
