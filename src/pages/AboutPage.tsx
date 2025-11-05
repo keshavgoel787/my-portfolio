@@ -4,6 +4,8 @@ import { Box, Typography, Button } from "@mui/material";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import PageLayout from "../components/PageLayout";
 import ContactForm from "../components/ContactForm";
+import Card from "../components/Card";
+import SectionTitle from "../components/SectionTitle";
 import { LAYOUT, LINKS } from "../config/constants";
 import { colors } from "../config/theme";
 
@@ -28,343 +30,89 @@ export default function AboutPage() {
         }}
       >
         {/* About Me Card */}
-        <Box
-          sx={{
-            width: LAYOUT.CARD_WIDTH,
-            bgcolor: "rgba(30, 30, 30, 0.4)",
-            color: colors.text.primary,
-            borderRadius: 2,
-            p: { xs: 3, sm: 4 },
-            boxShadow: `0 0 20px ${colors.cyan}22`,
-            backdropFilter: "blur(10px)",
-            border: `1px solid ${colors.cyan}44`,
-            transition: "all 0.3s ease",
-            "&:hover": {
-              boxShadow: `0 0 30px ${colors.cyan}66`,
-              border: `1px solid ${colors.cyan}88`,
-              transform: "translateY(-4px)",
-            },
-          }}
-        >
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{
-              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            About Me
-          </Typography>
-
-          <Typography sx={{ mb: 2 }}>Hey there! 👋</Typography>
-
+        <Card>
+          <SectionTitle>About Me</SectionTitle>
           <Typography sx={{ mb: 2 }}>
-            I'm Keshav, currently studying Data Science and Math at Northeastern (graduating 2027). Started coding in high school with Python and immediately got hooked on the idea of teaching computers to do cool stuff. Now I spend my days building AI tools, wrangling messy data, and occasionally pretending to understand all the math behind it.
+            Data Science & Math student at Northeastern (graduating 2027), building GenAI pipelines and microservices at Johnson & Johnson. Previously at VDart doing AI-powered resume parsing, and analyzing EPA data for environmental research.
           </Typography>
-
-          <Typography sx={{ mb: 2 }}>
-            These days, I'm working at Johnson & Johnson building GenAI pipelines and microservices. Before that, I was helping recruiters at VDart with AI-powered resume parsing, and analyzing EPA data for environmental research at Northeastern.
+          <Typography>
+            When I'm not coding, you'll find me at Bhangra practice, hunting for Boston's best tacos, or expanding my Pokemon card collection.
           </Typography>
+        </Card>
 
-          <Typography sx={{ mb: 2 }}>
-            When I'm not staring at code, you'll find me at Bhangra practice (yes, I dance!), hunting for the best tacos in Boston, hiking, or expanding my Pokemon card collection. Always down to chat about tech, data science, or why Taco Bell is underrated. Fair warning: I'm a certified Professional Yapper™.
-          </Typography>
-        </Box>
-
-        {/* Achievements Card */}
-        <Box
-          sx={{
-            width: LAYOUT.CARD_WIDTH,
-            bgcolor: "rgba(30, 30, 30, 0.4)",
-            color: colors.text.primary,
-            borderRadius: 2,
-            p: { xs: 3, sm: 4 },
-            boxShadow: `0 0 20px ${colors.cyan}22`,
-            backdropFilter: "blur(10px)",
-            border: `1px solid ${colors.cyan}44`,
-            transition: "all 0.3s ease",
-            "&:hover": {
-              boxShadow: `0 0 30px ${colors.cyan}66`,
-              border: `1px solid ${colors.cyan}88`,
-              transform: "translateY(-4px)",
-            },
-          }}
-        >
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{
-              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Achievements
-          </Typography>
-
+        {/* Highlights Card */}
+        <Card>
+          <SectionTitle>Highlights</SectionTitle>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Box>
               <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                🏆 2nd Place - HackRU Hackathon 2025
-              </Typography>
-              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                🏆 1st Place - CSBase Climate Hackathon 2024
+                🏆 2nd Place - HackRU 2025 | 1st Place - CSBase Climate Hacks 2024
               </Typography>
               <Typography variant="body2">
-                Beat 400+ teams with BreatheEasy, an eco-friendly route planning app
+                Beat 400+ teams with innovative AI solutions
               </Typography>
             </Box>
-
             <Box>
               <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                🎓 GPA: 3.88/4.00
+                🎓 GPA: 3.88/4.00 - Dean's List
               </Typography>
               <Typography variant="body2">
-                Dean's List recipient - Data Science & Mathematics
+                Data Science & Mathematics at Northeastern
               </Typography>
             </Box>
-
-            <Box>
-              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                👨‍🏫 Teaching Assistant
-              </Typography>
-              <Typography variant="body2">
-                Mentored 100+ students in Python & Data Science, improving assignment performance by 20%
-              </Typography>
-            </Box>
-
             <Box>
               <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
                 🚀 Production Impact
               </Typography>
               <Typography variant="body2">
-                Built systems handling 2,000+ daily messages and 10K+ API requests in production environments
+                Built systems handling 2,000+ daily messages and 10K+ API requests
               </Typography>
             </Box>
           </Box>
-        </Box>
+        </Card>
 
         {/* Skills Card */}
-        <Box
-          sx={{
-            width: LAYOUT.CARD_WIDTH,
-            bgcolor: "rgba(30, 30, 30, 0.4)",
-            color: colors.text.primary,
-            borderRadius: 2,
-            p: { xs: 3, sm: 4 },
-            boxShadow: `0 0 20px ${colors.cyan}22`,
-            backdropFilter: "blur(10px)",
-            border: `1px solid ${colors.cyan}44`,
-            transition: "all 0.3s ease",
-            "&:hover": {
-              boxShadow: `0 0 30px ${colors.cyan}66`,
-              border: `1px solid ${colors.cyan}88`,
-              transform: "translateY(-4px)",
-            },
-          }}
-        >
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{
-              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            What I Work With
-          </Typography>
-
-          <Box sx={{ mb: 3 }}>
+        <Card>
+          <SectionTitle>Tech Stack</SectionTitle>
+          <Box sx={{ mb: 2 }}>
             <Typography variant="h6" sx={{ color: colors.cyan, mb: 1 }}>
-              Languages
+              Core Languages
             </Typography>
             <Typography>
-              Python (my go-to), JavaScript, TypeScript, R, Java, C#, C, C++, HTML/CSS, SQL
+              Python, JavaScript, TypeScript, SQL, Java, C++
             </Typography>
           </Box>
-
-          <Box sx={{ mb: 3 }}>
+          <Box sx={{ mb: 2 }}>
             <Typography variant="h6" sx={{ color: colors.cyan, mb: 1 }}>
-              Data Science & ML (where the magic happens)
+              Data Science & ML
             </Typography>
             <Typography>
-              Scikit-learn, TensorFlow, Pandas, OpenCV, Ultralytics, HuggingFace, Ollama, Gemini, NLP, BeautifulSoup, Selenium
+              TensorFlow, Scikit-learn, Pandas, HuggingFace, Ollama, NLP
             </Typography>
           </Box>
-
-          <Box sx={{ mb: 3 }}>
+          <Box sx={{ mb: 2 }}>
             <Typography variant="h6" sx={{ color: colors.cyan, mb: 1 }}>
-              Web & Mobile
+              Web Development
             </Typography>
             <Typography>
-              React (like this site!), Node.js, Flutter, MongoDB, MySQL
+              React, Node.js, Flask, MongoDB, MySQL
             </Typography>
           </Box>
-
           <Box>
             <Typography variant="h6" sx={{ color: colors.cyan, mb: 1 }}>
-              Tools & Platforms
+              Tools & Cloud
             </Typography>
             <Typography>
-              Git, Docker, Linux, Tableau, Snowflake, AWS, Digital Ocean, and the usual suspects
+              Docker, Kubernetes, Git, AWS, Snowflake, Tableau
             </Typography>
           </Box>
-        </Box>
-
-        {/* Currently Learning Card */}
-        <Box
-          sx={{
-            width: LAYOUT.CARD_WIDTH,
-            bgcolor: "rgba(30, 30, 30, 0.4)",
-            color: colors.text.primary,
-            borderRadius: 2,
-            p: { xs: 3, sm: 4 },
-            boxShadow: `0 0 20px ${colors.cyan}22`,
-            backdropFilter: "blur(10px)",
-            border: `1px solid ${colors.cyan}44`,
-            transition: "all 0.3s ease",
-            "&:hover": {
-              boxShadow: `0 0 30px ${colors.cyan}66`,
-              border: `1px solid ${colors.cyan}88`,
-              transform: "translateY(-4px)",
-            },
-          }}
-        >
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{
-              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Currently Learning
-          </Typography>
-
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Box>
-              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                🧠 Advanced RAG Architectures
-              </Typography>
-              <Typography variant="body2">
-                Exploring multi-agent systems and hybrid search techniques for better context retrieval
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                ☁️ Kubernetes & Cloud-Native Development
-              </Typography>
-              <Typography variant="body2">
-                Deepening my understanding of container orchestration and microservices deployment
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                📊 Time Series Forecasting
-              </Typography>
-              <Typography variant="body2">
-                Working with Prophet and ARIMA models for environmental data prediction
-              </Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h6" sx={{ color: colors.cyan, mb: 0.5 }}>
-                🎨 Three.js & WebGL
-              </Typography>
-              <Typography variant="body2">
-                Building interactive 3D experiences (like the galaxy on this site!)
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
-
-        {/* Education Card */}
-        <Box
-          sx={{
-            width: LAYOUT.CARD_WIDTH,
-            bgcolor: "rgba(30, 30, 30, 0.4)",
-            color: colors.text.primary,
-            borderRadius: 2,
-            p: { xs: 3, sm: 4 },
-            boxShadow: `0 0 20px ${colors.cyan}22`,
-            backdropFilter: "blur(10px)",
-            border: `1px solid ${colors.cyan}44`,
-            transition: "all 0.3s ease",
-            "&:hover": {
-              boxShadow: `0 0 30px ${colors.cyan}66`,
-              border: `1px solid ${colors.cyan}88`,
-              transform: "translateY(-4px)",
-            },
-          }}
-        >
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{
-              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Education
-          </Typography>
-
-          <Typography variant="h6" sx={{ color: colors.cyan }}>
-            Northeastern University
-          </Typography>
-          <Typography variant="body1" sx={{ fontStyle: "italic", mb: 1 }}>
-            Bachelor of Science in Data Science and Mathematics
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Expected Graduation: May 2027
-          </Typography>
-        </Box>
+        </Card>
 
         {/* Contact Card */}
-        <Box
-          sx={{
-            width: LAYOUT.CARD_WIDTH,
-            bgcolor: "rgba(30, 30, 30, 0.4)",
-            color: colors.text.primary,
-            borderRadius: 2,
-            p: { xs: 3, sm: 4 },
-            boxShadow: `0 0 20px ${colors.cyan}22`,
-            backdropFilter: "blur(10px)",
-            border: `1px solid ${colors.cyan}44`,
-            transition: "all 0.3s ease",
-            "&:hover": {
-              boxShadow: `0 0 30px ${colors.cyan}66`,
-              border: `1px solid ${colors.cyan}88`,
-              transform: "translateY(-4px)",
-            },
-          }}
-        >
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{
-              background: "linear-gradient(135deg, #9b59b6 0%, #66eaff 50%, #3498db 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              mb: 2,
-            }}
-          >
-            ☕ Let's Connect
-          </Typography>
+        <Card>
+          <SectionTitle>Let's Connect</SectionTitle>
           <Typography sx={{ mb: 3 }}>
-            Always down to chat about tech, data science, or the best taco spots. Send me a message below or grab my resume!
+            Always down to chat about tech, data science, or the best taco spots!
           </Typography>
 
           <ContactForm />
@@ -394,7 +142,7 @@ export default function AboutPage() {
               Download My Resume
             </Button>
           </Box>
-        </Box>
+        </Card>
       </Box>
     </PageLayout>
   );
